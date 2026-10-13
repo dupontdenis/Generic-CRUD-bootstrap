@@ -1,0 +1,23 @@
+{% extends "myapp/layout.html" %} 
+
+{% block title %}Détail de la personne{% endblock %}
+
+{% block body %}
+<h1 class="mb-4">Détail de la personne</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">
+            {{ person.first_name }} {{ person.last_name }}
+        </h2>
+
+        <p class="text-muted">Identifiant : {{ person.pk }}</p>
+
+        <a href="{% url 'person_update' person.pk %}"
+           class="btn btn-warning">Modifier</a>
+
+        <a href="{% url 'person_list' %}"
+           class="btn btn-secondary">Retour à la liste</a>
+    </div>
+</div>
+{% endblock %}
